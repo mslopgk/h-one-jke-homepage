@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>에이치원 홈페이지 시안 인덱스</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0f1017;--card:#171923;--line:#262a38;--txt:#e8e8ee;--mut:#8a8fa3;--acc:#7c5cff;--brand:#29166e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 "Noto Sans KR",system-ui,sans-serif;padding:56px 40px 80px}
+h1{font-size:34px;letter-spacing:-.02em;margin:0 0 6px}p.lead{color:var(--mut);margin:0 0 40px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.skill h2{margin:0 0 4px;font-size:18px}.skill .d{color:var(--mut);font-size:13px;margin-bottom:14px;min-height:40px}
+.skill a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;margin-top:8px;border:1px solid var(--line);border-radius:9px;color:var(--txt);text-decoration:none;background:#1c1f2c;transition:border-color .15s,transform .15s}
+.skill a:hover{border-color:var(--acc);transform:translateX(3px)}.skill a small{color:var(--mut)}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--brand);color:#fff;margin-bottom:10px;letter-spacing:.04em}
+footer{margin-top:48px;color:var(--mut);font-size:12px}
+</style></head><body>
+<h1>에이치원(H-ONE) 홈페이지 시안</h1>
+<p style="margin:0 0 8px"><a href="frontend-design/v1.html" style="display:inline-block;background:#5b3df5;color:#fff;text-decoration:none;padding:10px 18px;border-radius:999px;font-weight:600">▶ 시안 1부터 순서대로 보기</a></p>
+<p class="lead">㈜JKE 사이트(jketech.co.kr) 에셋·콘텐츠를 그대로 사용해 만든 메인 페이지 모션 시안. 2차: JKE 디자인 승계 없이 시안마다 다른 디자인 시스템 12종. 스킬 4종 × 각 3안. 공통 브리프는 <code>BRIEF.md</code>.</p>
+<div class="grid">
+<section class="skill"><span class="tag">/frontend-design</span><h2>Frontend Design</h2><div class="d">스위스 타이포 / 잡지 페이퍼 / 네오브루탈리즘</div>
+<a href="frontend-design/v1.html">1 · Swiss Industrial <small>백·흑·레드</small></a><a href="frontend-design/v2.html">2 · Warm Editorial Paper <small>크림·딥그린</small></a><a href="frontend-design/v3.html">3 · Neo-Brutalist <small>옐로·블랙</small></a></section>
+<section class="skill"><span class="tag">/apple-design</span><h2>Apple Design</h2><div class="d">제품 스테이지 / 메시 그라디언트 글라스 / 라이트 도면</div>
+<a href="apple-design/v1.html">4 · Apple Store Light <small>화이트 제품 중심</small></a><a href="apple-design/v2.html">5 · Soft Gradient Glass <small>파스텔 그라디언트</small></a><a href="apple-design/v3.html">6 · Technical Blueprint <small>아이스블루·시안</small></a></section>
+<section class="skill"><span class="tag">/design-taste-frontend</span><h2>Design Taste</h2><div class="d">노르딕 미니멀 / 터미널 데이터 / 컬러 블록</div>
+<a href="design-taste-frontend/v1.html">7 · Nordic Minimal <small>오프화이트·세이지</small></a><a href="design-taste-frontend/v2.html">8 · Terminal / Data <small>차콜·그린 (유일한 다크)</small></a><a href="design-taste-frontend/v3.html">9 · Bold Color Block <small>오렌지·코발트</small></a></section>
+<section class="skill"><span class="tag">/impeccable</span><h2>Impeccable</h2><div class="d">기업형 SaaS / 스틸&카퍼 / 흑백 매거진</div>
+<a href="impeccable/v1.html">10 · Corporate Clean SaaS <small>화이트·스카이블루</small></a><a href="impeccable/v2.html">11 · Steel &amp; Copper <small>스틸그레이·카퍼</small></a><a href="impeccable/v3.html">12 · Monochrome Magazine <small>흑백 세리프</small></a></section>
+</div>
+<p style="margin-top:28px;color:var(--mut);font-size:13px">1차(JKE 디자인 승계형) 12안은 <a href="_archive/jke-inherit/frontend-design/v1.html" style="color:var(--acc)">_archive/jke-inherit/</a> 에 보관.</p>
+<a href="frontend-design/v1.html">v1 · Deep Ocean Cinematic <small>GSAP</small></a><a href="frontend-design/v2.html">v2 · Industrial Editorial <small>GSAP</small></a><a href="frontend-design/v3.html">v3 · 자유 방향 <small>GSAP</small></a></section>
+<section class="skill"><span class="tag">/apple-design</span><h2>Apple Design</h2><div class="d">애플식 플루이드 모션: 스프링, 스크럽 히어로, 글라스 내비, 드래그 캐러셀</div>
+<a href="apple-design/v1.html">v1 · Keynote Dark <small>scrub</small></a><a href="apple-design/v2.html">v2 · Apple Light <small>spring drag</small></a><a href="apple-design/v3.html">v3 · Bento / Chapter <small>spring</small></a></section>
+<section class="skill"><span class="tag">/design-taste-frontend</span><h2>Design Taste</h2><div class="d">안티-템플릿. 원본 최대 존중 1안 + 비정형 그리드 2안 + 다른 레이아웃 DNA 3안</div>
+<a href="design-taste-frontend/v1.html">v1 · 원본 진화형 <small>GSAP</small></a><a href="design-taste-frontend/v2.html">v2 · 비정형 그리드 <small>GSAP</small></a><a href="design-taste-frontend/v3.html">v3 · 스플릿 / 챕터 <small>GSAP</small></a></section>
+<section class="skill"><span class="tag">/impeccable</span><h2>Impeccable</h2><div class="d">위계·타이포·간격 시스템 정돈. 다크 정제 / 라이트 프리미엄 / 챕터형 3안</div>
+<a href="impeccable/v1.html">v1 · 다크 정제형 <small>GSAP</small></a><a href="impeccable/v2.html">v2 · 라이트 프리미엄 <small>GSAP</small></a><a href="impeccable/v3.html">v3 · 챕터 / 사이드바 <small>anime.js</small></a></section>
+</div>
+<footer>2026-09-07 · 각 시안 하단의 플로팅 바(1~12)로 시안 간 즉시 전환. 키보드: <kbd>[</kbd> 이전 · <kbd>]</kbd> 다음 · <kbd>1</kbd>~<kbd>9</kbd>,<kbd>0</kbd> 바로가기 · 에셋은 ../assets 상대경로</footer>
+</body></html>

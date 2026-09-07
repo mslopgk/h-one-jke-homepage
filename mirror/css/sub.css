@@ -1,0 +1,96 @@
+.sub_wrap {width:100%; position:relative;}
+
+#sub_containner{width:100%; }
+	.sub_content {width:1000px; margin:0 auto; position:relative; margin-top:0px;}
+
+		.sub_leftmenu {width:200px; float:left; }
+			.left_bg_t {width:180px; height:50px; background:#29166e; text-align:center; padding-top:50px; font-size:18px; color:#fff; font-weight:600;  letter-spacing:-0.5px}
+			.left_menu {background:#fff; width:180px; height:auto; padding:0px 0px; }
+			.left_menu li {display:block; padding:10px 10px; text-align:left; color:#fff; border-bottom:1px solid #ddd; border-right:1px solid #ddd; border-left:1px solid #ddd; }
+			.left_menu li a{ display:block;  color:#666; font-size:12px}
+			.left_menu li a:hover{  font-size:12px; text-decoration:none;  color:#1e0b67;  background:url('/img/sub/sub_l_bg.gif') no-repeat center right; }
+			.left_menu li.on a{ font-size:12px;  text-decoration:none;  color:#1e0b67;  background:url('/img/sub/sub_l_bg.gif') no-repeat center right;}
+
+		.sub_layout {width:800px; float:left; margin-top:50px; padding-bottom:20px;}
+
+			.sitemap {width:800px; margin:0 auto; border-bottom:1px solid #ddd; font-size:23px; padding-bottom:10px; color:#444; margin-bottom:20px; padding-left:10px; letter-spacing:-2px;}
+				.sitemap .site_home{float:right; font-size:12px; color:#888; letter-spacing:0px;}
+
+.sub_visual {width:100%; height:310px; position:relative; background:url('/img/sub/sub_bg01.gif') no-repeat center; background-size:cover}
+.sub_visual1 {width:100%; background:#555; height:170px; position:relative; background:url('/img/sub/sub_visual01.gif') no-repeat center;}
+.sub_visual2 {width:100%; background:#555; height:170px; position:relative; background:url('/img/sub/sub_visual02.gif') no-repeat center;}
+.sub_visual3 {width:100%; background:#555; height:170px; position:relative; background:url('/img/sub/sub_visual04.gif') no-repeat center;}
+.sub_visual4 {width:100%; background:#555; height:170px; position:relative; background:url('/img/sub/sub_visual03.gif') no-repeat center;}
+.sub_visual5 {width:100%; background:#555; height:170px; position:relative; background:url('/img/sub/sub_visual05.gif') no-repeat center;}
+
+	.s_visual_t {width:1000px; margin:0 auto; }
+	.s_visual_t p {text-align:center; padding-top:160px; color:#fff; font-size:30px;letter-spacing:-0.5px;}
+
+
+.loca_info{width:800px; height:43px; font-size:14px; }
+.loca_info li{background:url(/img/sub/sub08_sq.jpg) no-repeat left top; padding:0 15px 0 4px; float:left; color:#444}
+.loca_info li span{color:#fff}
+
+.top_title{color:#4f4f4f; font-weight:400; font-size:19px; letter-spacing:-0.5px; line-height:30px; padding-bottom:20px;}
+.top_title span {color:#0b5190}
+
+.sub02_con_t {min-height:110px; padding-top:90px; padding-left:60px;width:180px; background:#f8f8f8; border:1px solid #eee; float:left; margin-left:15px; color:#555}
+.sub02_con_text {background:#fcfcfc; border:1px solid #eee;  float:left; color:#666}
+
+.sub02_link {padding:10px; width:500px}
+.sub02_link li {background:url('/img/sub/sub02_icon.gif') no-repeat left center; margin-left:20px; padding-left:20px; line-height:170%}
+.sub02_link li a {color:#888}
+
+
+
+/* 사업분야 */
+.boardType2 {width:100%; clear:both ; padding:5px 0 0 0;} /* 내용작성 관련 테이블 */2016-10-14
+.boardType2.topBor{background:none; padding:0; border-top:2px solid #0b5190; border-bottom:1px solid #ccc}
+.boardType2 tbody th{text-align:left; text-align:center; padding:7px; color:#444; font-size:12px;  }
+.boardType2 tbody td{padding:5px 2px; border-bottom:1px solid #ddd; line-height:140%;  color:#555;  font-size:12px; }
+.boardType2 tbody td.end {border-right:none; text-align:center; font-size:12px; }
+.boardType2 .bThBgT tbody th {background:#f9f9f9; color:#555; letter-spacing:0.5px; border-bottom:1px solid #ccc; font-size:12px; border-right:1px solid #ddd}
+
+
+/* 사업분야 */
+.boardType2 {width:100%; clear:both ; padding:5px 0 0 0;} /* 내용작성 관련 테이블 */
+.boardType2.topBor{background:none; padding:0; border-top:2px solid #0b5190; border-bottom:1px solid #ccc}
+.boardType2 tbody th{text-align:left; text-align:center; padding:7px; color:#444; font-size:12px;  }
+.boardType2 tbody td{padding:8px; border-bottom:1px solid #ddd; line-height:140%;  color:#555;  font-size:12px; border-right:1px solid #Ddd}
+.boardType2 tbody td.end {border-right:none; text-align:center; font-size:12px; }
+.boardType2 .bThBgT02 tbody th {background:#f9f9f9; color:#555; letter-spacing:0.5px; border-bottom:1px solid #ccc; font-size:12px; border-right:1px solid #ddd}
+.boardType2 tbody th.end {border-right:none; text-align:center; font-size:12px; }
+
+
+.result_title {font-size:22px; color:#333; padding-bottom:20px;}
+.result_title span{color:#0b5190;}
+
+
+
+/* 시공실적 */
+.result_wrap {background:#f9f9f9; border:1px solid #ccc; padding:10px; }
+.tab2 { position:relative; width:100%; overflow:hidden; }
+.tab2 .tab_btn { display:inline-block;}
+.tab2 li { display:inline-block;}
+.tab2 .tab_btn a{ font-size:14px; color:#111; background:#fff; text-align:center; border:1px solid #aaa; padding:8px 20px; font-size:14px; color:#666; text-align:center; display:block; }
+.tab2 .tab_btn a:hover {  font-size:14px; color:#fff; background:#646f75; text-decoration:none;   border:1px solid #646f75;}
+.tab2 .tab_btn .current { font-size:14px; color:#fff; text-align:center; background:#646f75; border:1px solid #646f75; }
+
+
+
+.loca_info{width:800px; height:43px; font-size:14px; }
+.loca_info li{background:#2873b4 url(/img/sub/sub08_sq.jpg) no-repeat left top; padding:0 15px 0 4px; float:left; color:#444}
+.loca_info li span{color:#fff}
+
+.top_title{color:#4f4f4f; font-weight:400; font-size:19px; letter-spacing:-0.5px; line-height:30px; padding-bottom:20px;}
+.top_title span {color:#0b5190}
+
+
+/* tab */
+
+.sub_tab_cate ul {margin-bottom:10px;padding-left:1px;zoom:1}
+.sub_tab_cate ul:after {display:block;visibility:hidden;clear:both;content:""}
+.sub_tab_cate li {float:left;margin-bottom:-1px}
+.sub_tab_cate a {display:block;position:relative;margin-left:-1px;padding:8px 0 8px;width:159px;border:1px solid #ddd;background:#f7f7f7;color:#888;text-align:center;line-height:1.2em;cursor:pointer}
+.sub_tab_cate a:focus, #bo_cate a:hover, #bo_cate a:active {text-decoration:none}
+.sub_tab_cate .sub_tab_cate_on {z-index:2;border:1px solid #29146b;background:#fff;color:#29146b;font-weight:bold}

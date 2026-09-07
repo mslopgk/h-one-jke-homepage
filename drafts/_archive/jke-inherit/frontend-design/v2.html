@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에이치원 H-ONE | Industrial Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Noto Sans CJK KR";src:url("../../assets/fonts/NotoSansCJKkr-Light.otf") format("opentype");font-weight:300;font-display:swap}
+@font-face{font-family:"Noto Sans CJK KR";src:url("../../assets/fonts/NotoSansCJKkr-Medium.otf") format("opentype");font-weight:500;font-display:swap}
+:root{
+  --paper:#f7f6f2;--paper-2:#efede7;--ink:#1e1f29;--ink-soft:#5a5b66;--line:#d9d7d0;--purple:#29166e;--purple-deep:#1e0b67;--blue:#0b5190;--cyan:#079CCD;
+  --sans:"Noto Sans CJK KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --serif:"Instrument Serif","Noto Sans CJK KR",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}img{display:block;max-width:100%}
+.wrap{width:min(1360px,calc(100% - 80px));margin:0 auto}
+@media(max-width:768px){.wrap{width:calc(100% - 36px)}}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+.rule{height:1px;background:var(--ink);opacity:.9}
+.serif{font-family:var(--serif)}
+::selection{background:var(--purple);color:#fff}
+
+/* paper texture */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.5;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .93 0 0 0 0 .92 0 0 0 0 .9 0 0 0 .08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ===== HEADER ===== */
+.header{position:sticky;top:0;z-index:100;height:80px;background:rgba(247,246,242,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
+.header .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:100%;gap:40px}
+.logo{display:flex;align-items:baseline;gap:12px}
+.logo b{font-family:var(--serif);font-weight:400;font-size:34px;letter-spacing:-.01em;line-height:1}
+.logo b i{font-style:italic;color:var(--purple)}
+.logo span{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-soft)}
+.gnb{display:flex;justify-content:center;height:100%}
+.gnb>li>a{display:flex;align-items:center;height:80px;padding:0 28px;font-weight:500;font-size:15px}
+.gnb>li>a sup{font-family:var(--mono);font-size:9px;color:var(--purple);margin-left:5px;font-weight:400}
+.gnb>li>a::after{content:"";position:absolute;left:28px;right:28px;bottom:-1px;height:2px;background:var(--purple);transform:scaleX(0);transition:.3s;transform-origin:left}
+.gnb>li{position:relative}.gnb>li:hover>a::after{transform:scaleX(1)}
+.lang{font-family:var(--mono);font-size:12px;letter-spacing:.15em;display:flex;gap:14px}
+.lang a{opacity:.45}.lang a.on{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.mega{position:absolute;top:80px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--ink);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.35s;padding:36px 0 44px}
+.header:hover .mega{opacity:1;visibility:visible;transform:none}
+.mega .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.mega h6{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--purple);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.mega li a{display:block;font-size:14px;line-height:1.9;color:var(--ink-soft)}
+.mega li a:hover{color:var(--ink);padding-left:6px;transition:.2s}
+.burger{display:none;background:none;border:0;font-family:var(--mono);font-size:12px;letter-spacing:.15em;cursor:pointer;justify-self:end}
+@media(max-width:1180px){.gnb>li>a{padding:0 16px;font-size:14px}}
+@media(max-width:900px){.header .wrap{grid-template-columns:auto auto}.gnb,.lang,.mega{display:none}.burger{display:block}}
+
+/* ===== HERO ===== */
+.hero{border-bottom:1px solid var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.15fr;min-height:calc(100vh - 80px);gap:0}
+.hero .left{padding:70px 60px 60px 0;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--ink)}
+.hero .kicker{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--ink-soft)}
+.hero .copy{position:relative;min-height:340px}
+.hero .t{position:absolute;inset:0;opacity:0;visibility:hidden}
+.hero .t.is-active{position:relative;opacity:1;visibility:visible}
+.hero .t .sub{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.2vw,34px);color:var(--purple);overflow:hidden}
+.hero .t .sub span{display:inline-block}
+.hero .t h1{font-weight:500;font-size:clamp(40px,5vw,78px);line-height:1.08;letter-spacing:-.035em;margin-top:22px}
+.hero .t h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
+.hero .t h1 .w span{display:inline-block}
+.hero .t h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.hero .t p{margin-top:26px;max-width:440px;color:var(--ink-soft);font-size:16px}
+.hero .bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:30px;border-top:1px solid var(--line)}
+.hero .bottom .cta{display:inline-flex;align-items:center;gap:14px;font-weight:500;font-size:15px}
+.hero .bottom .cta i{width:44px;height:44px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-style:normal;transition:.3s}
+.hero .bottom .cta:hover i{background:var(--ink);color:#fff}
+.dots{display:flex;gap:10px;align-items:center}
+.dots button{width:36px;height:2px;border:0;background:var(--line);cursor:pointer;position:relative;overflow:hidden;padding:0}
+.dots button::after{content:"";position:absolute;inset:0;background:var(--purple);transform:scaleX(0);transform-origin:left}
+.dots button.on::after{transform:scaleX(1);transition:transform 7s linear}
+.dots .pp{width:auto;height:auto;background:none;font-family:var(--mono);font-size:11px;margin-left:8px}
+.dots .pp::after{display:none}
+.hero .right{position:relative;overflow:hidden;background:var(--ink)}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden}
+.slide.is-active{opacity:1;visibility:visible}
+.slide .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.slide.is-active .bg{animation:kb 10s linear forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.1)}}
+.slide .cap{position:absolute;left:30px;bottom:30px;color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.15em;background:rgba(30,31,41,.6);padding:8px 12px;backdrop-filter:blur(6px)}
+.hero .idx{position:absolute;right:30px;top:30px;font-family:var(--serif);color:#fff;font-size:64px;line-height:1;mix-blend-mode:difference}
+.quick{position:absolute;right:0;bottom:0;left:0;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(247,246,242,.94);border-top:1px solid var(--ink)}
+.quick li{border-right:1px solid var(--line);position:relative}
+.quick li:last-child{border-right:0}
+.quick a{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.15em;transition:.3s}
+.quick li:hover a{background:var(--ink);color:#fff}
+.quick .pop{position:absolute;left:0;bottom:100%;width:100%;aspect-ratio:330/125;background-size:cover;opacity:0;transform:translateY(8px);transition:.35s;pointer-events:none;border:1px solid var(--ink)}
+.quick li:hover .pop{opacity:1;transform:none}
+@media(max-width:1024px){.hero .wrap{grid-template-columns:1fr;min-height:0}.hero .left{border-right:0;padding:50px 0 40px;border-bottom:1px solid var(--ink)}.hero .right{aspect-ratio:16/10;margin:0 -40px}.hero .copy{min-height:300px}}
+@media(max-width:768px){.hero .right{margin:0 -18px}.quick{grid-template-columns:1fr 1fr}.quick li:nth-child(2n){border-right:0}.quick li{border-bottom:1px solid var(--line)}.quick .pop{display:none}.hero .idx{font-size:40px}}
+
+/* ===== TICKER ===== */
+.ticker{border-bottom:1px solid var(--ink);overflow:hidden;background:var(--purple);color:#fff;padding:12px 0}
+.ticker .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;font-family:var(--mono);font-size:12px;letter-spacing:.2em;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ===== SECTION HEAD ===== */
+section{position:relative}
+.shead{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start;padding-top:14px;border-top:1px solid var(--ink)}
+.shead .no{font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:var(--purple)}
+.shead .no b{display:block;font-family:var(--serif);font-weight:400;font-size:64px;line-height:.9;color:var(--ink);margin-top:10px}
+.h2{font-weight:500;font-size:clamp(34px,4.2vw,64px);line-height:1.08;letter-spacing:-.035em}
+.h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--purple);letter-spacing:-.01em}
+.h2 .w{display:inline-block;overflow:hidden;vertical-align:top}.h2 .w span{display:inline-block}
+.lead{color:var(--ink-soft);font-size:17px;max-width:520px;margin-top:24px}
+.reveal{opacity:0;transform:translateY(30px)}
+@media(max-width:768px){.shead{grid-template-columns:1fr;gap:16px}}
+
+/* ===== GREETING ===== */
+.greet{padding:120px 0 130px}
+.greet .body{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:70px;align-items:start}
+.greet blockquote{font-family:var(--serif);font-size:clamp(30px,3vw,46px);line-height:1.2;letter-spacing:-.01em}
+.greet blockquote span{color:var(--purple);font-style:italic}
+.greet .txt p{color:var(--ink-soft);margin-top:24px;font-size:16px}
+.greet .txt ol{margin-top:34px;counter-reset:n;border-top:1px solid var(--ink)}
+.greet .txt ol li{counter-increment:n;display:grid;grid-template-columns:60px 1fr;padding:16px 0;border-bottom:1px solid var(--line);font-weight:500}
+.greet .txt ol li::before{content:"0" counter(n);font-family:var(--mono);font-size:12px;color:var(--purple);padding-top:5px}
+.greet .txt ol li small{display:block;font-weight:300;color:var(--ink-soft);font-size:14px}
+.greet .fig{position:relative}
+.greet .fig img{width:100%;aspect-ratio:800/434;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
+.greet .fig figcaption{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ink-soft);padding-top:10px;border-top:1px solid var(--ink);margin-top:12px}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px;border:1px solid var(--ink)}
+.values li{padding:20px 16px;border-right:1px solid var(--ink);display:flex;flex-direction:column;gap:12px}
+.values li:last-child{border-right:0}
+.values img{width:40px;height:40px;filter:brightness(0) saturate(100%) invert(11%) sepia(63%) saturate(4489%) hue-rotate(252deg) brightness(88%) contrast(105%)}
+.values strong{font-weight:500;font-size:14px}
+.values small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)}
+@media(max-width:1024px){.greet .body{grid-template-columns:1fr}}
+@media(max-width:640px){.values{grid-template-columns:1fr 1fr}.values li:nth-child(2){border-right:0}.values li:nth-child(-n+2){border-bottom:1px solid var(--ink)}.greet{padding:80px 0}}
+
+/* ===== BUSINESS ===== */
+.biz{padding:0 0 130px}
+.biz .list{margin-top:70px;border-top:1px solid var(--ink)}
+.biz .row{display:grid;grid-template-columns:120px 1fr 1.1fr;gap:40px;padding:44px 0;border-bottom:1px solid var(--ink);align-items:center;position:relative}
+.biz .row .n{font-family:var(--serif);font-size:56px;line-height:1;color:var(--purple)}
+.biz .row h3{font-weight:500;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:1.05}
+.biz .row h3 small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:var(--ink-soft);margin-top:10px;font-weight:400}
+.biz .row ul{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.biz .row ul li{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:100px;background:#fff}
+.biz .row .fig{position:relative;overflow:hidden;aspect-ratio:800/320;clip-path:inset(0 0 0 100%)}
+.biz .row .fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.biz .row:hover .fig img{transform:scale(1.04)}
+.biz .row .fig .tag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:10px;letter-spacing:.15em;background:#fff;padding:5px 9px}
+@media(max-width:1024px){.biz .row{grid-template-columns:80px 1fr}.biz .row .fig{grid-column:2}}
+@media(max-width:640px){.biz .row{grid-template-columns:1fr}.biz .row .fig{grid-column:1}}
+
+/* ===== PRODUCTS ===== */
+.products{padding:0 0 130px}
+.products .shead{grid-template-columns:220px 1fr auto}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-self:end}
+.filters span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;padding:6px 12px;border:1px solid var(--ink);border-radius:100px}
+.filters span.on{background:var(--ink);color:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:70px}
+.p{position:relative;display:block;grid-column:span 3}
+.p:nth-child(1){grid-column:span 6}
+.p:nth-child(2){grid-column:span 6}
+.p:nth-child(6){grid-column:span 4}.p:nth-child(7){grid-column:span 4}.p:nth-child(8){grid-column:span 4}
+.p .im{overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:4/3;position:relative}
+.p:nth-child(-n+2) .im{aspect-ratio:16/10}
+.p .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .6s;filter:grayscale(.35)}
+.p:hover .im img{transform:scale(1.06);filter:none}
+.p .im .idx{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;background:var(--paper);padding:4px 8px}
+.p .meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 0 0;border-bottom:1px solid var(--ink);padding-bottom:12px}
+.p .meta h4{font-weight:500;font-size:17px;letter-spacing:-.01em}
+.p .meta h4 small{display:block;font-weight:300;font-size:13px;color:var(--ink-soft)}
+.p .meta i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--purple);transition:.3s}
+.p:hover .meta i{transform:translateX(6px)}
+@media(max-width:1024px){.p,.p:nth-child(n){grid-column:span 6}.filters{display:none}.products .shead{grid-template-columns:1fr}}
+@media(max-width:560px){.p,.p:nth-child(n){grid-column:span 12}}
+
+/* ===== HISTORY ===== */
+.history{background:var(--ink);color:var(--paper);padding:130px 0}
+.history .shead{border-top-color:rgba(255,255,255,.5)}
+.history .shead .no b{color:var(--paper)}
+.history .h2 em{color:var(--cyan)}
+.history .lead{color:rgba(255,255,255,.6)}
+.hscroll{margin-top:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.3)}
+.hcol{padding:34px 26px 30px 0;border-right:1px solid rgba(255,255,255,.15);position:relative}
+.hcol:last-child{border-right:0}
+.hcol::before{content:"";position:absolute;top:-1px;left:0;width:0;height:1px;background:var(--cyan);transition:width 1.2s ease}
+.hcol.lit::before{width:100%}
+.hcol .y{font-family:var(--serif);font-size:clamp(52px,5.4vw,84px);line-height:.9}
+.hcol .y small{font-family:var(--mono);font-size:11px;letter-spacing:.15em;display:block;color:var(--cyan);margin-top:14px}
+.hcol ul{margin-top:28px}
+.hcol li{display:grid;grid-template-columns:34px 1fr;gap:10px;font-size:14px;color:rgba(255,255,255,.78);padding:9px 0;border-top:1px solid rgba(255,255,255,.1)}
+.hcol li b{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--cyan);padding-top:3px}
+.hmore{margin-top:60px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,.3);font-family:var(--mono);font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6)}
+.hmore a{color:#fff;border-bottom:1px solid var(--cyan);padding-bottom:4px}
+@media(max-width:1024px){.hscroll{grid-template-columns:1fr 1fr}.hcol:nth-child(2){border-right:0}}
+@media(max-width:600px){.hscroll{grid-template-columns:1fr}.hcol{border-right:0;padding-right:0}}
+
+/* ===== R&D ===== */
+.rnd{padding:130px 0;background:var(--paper-2)}
+.rnd .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:70px}
+.cert-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cert-wall figure{background:#fff;padding:8px;border:1px solid var(--line);box-shadow:0 12px 30px rgba(30,31,41,.08);transition:.4s}
+.cert-wall figure:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 30px 50px rgba(30,31,41,.14)}
+.cert-wall img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.cert-wall figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:8px 2px 0;color:var(--ink-soft)}
+.cat-list{border-top:1px solid var(--ink)}
+.cat-list li{display:grid;grid-template-columns:40px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center;font-weight:500}
+.cat-list li span{font-family:var(--mono);font-size:11px;color:var(--purple)}
+.cat-list li small{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);font-weight:400}
+.equip{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.equip .im{aspect-ratio:1/1;overflow:hidden;border:1px solid var(--line);background:#fff}
+.equip img{width:100%;height:100%;object-fit:cover;object-position:top}
+.equip h4{font-weight:500;font-size:22px;letter-spacing:-.02em}
+.equip p{color:var(--ink-soft);font-size:14px;margin-top:10px}
+.equip .num{font-family:var(--serif);font-size:72px;line-height:1;color:var(--purple);margin-top:20px}
+.equip .num small{font-family:var(--mono);font-size:11px;letter-spacing:.15em;display:block;color:var(--ink-soft);margin-top:4px}
+@media(max-width:1024px){.rnd .grid{grid-template-columns:1fr}}
+@media(max-width:600px){.cert-wall{grid-template-columns:1fr 1fr}.equip{grid-template-columns:1fr}.rnd{padding:80px 0}}
+
+/* ===== PARTNERS ===== */
+.partners{padding:90px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden}
+.partners .wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
+.partners h3{font-family:var(--serif);font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-.01em}
+.partners h3 em{color:var(--purple)}
+.marquee{margin-top:50px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee .track{display:flex;gap:72px;width:max-content;animation:mq 50s linear infinite;align-items:center}
+.marquee:hover .track{animation-play-state:paused}
+.marquee img{height:34px;filter:grayscale(1) contrast(1.1);opacity:.7;transition:.3s}
+.marquee img:hover{filter:none;opacity:1}
+@media(max-width:768px){.partners .wrap{grid-template-columns:1fr}}
+
+/* ===== SUPPORT ===== */
+.support{padding:130px 0}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:70px}
+.sc{border:1px solid var(--ink);background:#fff;display:flex;flex-direction:column}
+.sc .im{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--ink)}
+.sc img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1s}
+.sc:hover img{transform:scale(1.04)}
+.sc .bd{padding:24px;flex:1;display:flex;flex-direction:column}
+.sc h4{font-weight:500;font-size:20px;letter-spacing:-.02em;margin-top:8px}
+.sc p{color:var(--ink-soft);font-size:14px;margin-top:10px;flex:1}
+.sc a{font-family:var(--mono);font-size:11px;letter-spacing:.15em;margin-top:22px;color:var(--purple)}
+.contact{margin-top:90px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;border-top:1px solid var(--ink);padding-top:60px}
+.contact .tel{font-family:var(--serif);font-size:clamp(48px,6vw,96px);line-height:.95;letter-spacing:-.02em}
+.contact .tel a{color:var(--purple)}
+.contact .addr{margin-top:24px;font-size:16px;line-height:1.8}
+.contact .addr small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);margin-top:6px}
+.fam{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fam a{display:block}
+.fam .im{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--ink)}
+.fam img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3)}
+.fam span{display:flex;justify-content:space-between;padding-top:10px;font-size:14px;font-weight:500}
+.fam small{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--purple)}
+@media(max-width:1024px){.sgrid{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}}
+@media(max-width:640px){.sgrid{grid-template-columns:1fr}.support{padding:80px 0}}
+
+/* ===== FOOTER ===== */
+.footer{background:#2b2b2b;color:rgba(255,255,255,.62);padding:70px 0 40px;font-size:13px}
+.footer .top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer .logo b{color:#fff}
+.footer h5{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:#fff;margin-bottom:14px}
+.footer li{line-height:2}
+.footer .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.footer .big{font-family:var(--serif);font-size:clamp(60px,12vw,190px);line-height:.8;color:#fff;opacity:.08;letter-spacing:-.03em;margin-top:40px;white-space:nowrap;overflow:hidden}
+@media(max-width:900px){.footer .top{grid-template-columns:1fr 1fr}}
+
+/* mobile nav */
+.mnav{position:fixed;inset:0;background:var(--paper);z-index:200;padding:90px 30px 40px;overflow:auto;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.mnav.open{transform:none}
+.mnav .close{position:absolute;top:22px;right:22px;background:none;border:0;font-family:var(--mono);font-size:12px;letter-spacing:.15em;cursor:pointer}
+.mnav h5{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--purple);margin:26px 0 8px}
+.mnav li a{display:block;padding:4px 0;font-size:16px}
+
+.totop{position:fixed;right:26px;bottom:26px;z-index:80;width:50px;height:50px;border-radius:50%;border:1px solid var(--ink);background:var(--paper);cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.1em;opacity:0;transform:translateY(20px);transition:.4s}
+.totop.show{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}.slide.is-active .bg{animation:none}.biz .row .fig{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#"><b>H<i>-</i>ONE</b><span>에이치원 · EST. 2002</span></a>
+    <ul class="gnb">
+      <li><a href="#greet">기업소개<sup>07</sup></a></li>
+      <li><a href="#biz">사업분야<sup>03</sup></a></li>
+      <li><a href="#products">제품소개<sup>10</sup></a></li>
+      <li><a href="#rnd">R&amp;D<sup>02</sup></a></li>
+      <li><a href="#partners">PARTNER<sup>03</sup></a></li>
+      <li><a href="#support">고객지원<sup>04</sup></a></li>
+    </ul>
+    <div class="lang"><a href="#">ENG</a><a href="#" class="on">KOR</a></div>
+    <button class="burger" id="burger">MENU</button>
+  </div>
+  <div class="mega">
+    <div class="wrap">
+      <div><h6>01 기업소개</h6><ul><li><a href="#">인사말</a></li><li><a href="#">비전&amp;방침</a></li><li><a href="#">회사연혁</a></li><li><a href="#">조직도</a></li><li><a href="#">H-ONE Tour</a></li><li><a href="#">FAMILY</a></li><li><a href="#">찾아오시는길</a></li></ul></div>
+      <div><h6>02 사업분야</h6><ul><li><a href="#">OFFSHORE</a></li><li><a href="#">SHIPBUILDING</a></li><li><a href="#">BUILDING</a></li></ul></div>
+      <div><h6>03 제품소개</h6><ul><li><a href="#">단체표준인증품(MAS)</a></li><li><a href="#">SWITCHBOARD</a></li><li><a href="#">MOTOR CONTROL CENTER</a></li><li><a href="#">VFD</a></li><li><a href="#">DISTRIBUTION BOARD</a></li><li><a href="#">JUNCTION BOX</a></li><li><a href="#">CONSOLE</a></li><li><a href="#">BOOTH</a></li><li><a href="#">NAVIGATION CONTROL</a></li><li><a href="#">OTHERS</a></li></ul></div>
+      <div><h6>04 R&amp;D</h6><ul><li><a href="#">보유기술&amp;인증서</a></li><li><a href="#">시험 및 검사장비</a></li></ul></div>
+      <div><h6>05 Partner</h6><ul><li><a href="#">PARTNER</a></li><li><a href="#">고객사</a></li><li><a href="#">DISTRIBUTION</a></li></ul></div>
+      <div><h6>06 고객지원</h6><ul><li><a href="#">서비스 범위</a></li><li><a href="#">Life-cycle 서비스</a></li><li><a href="#">연락처</a></li><li><a href="#">FAQ</a></li></ul></div>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav">
+  <button class="close" id="mclose">CLOSE</button>
+  <h5>기업소개</h5><ul><li><a href="#">인사말</a></li><li><a href="#">비전&amp;방침</a></li><li><a href="#">회사연혁</a></li><li><a href="#">조직도</a></li><li><a href="#">H-ONE Tour</a></li><li><a href="#">FAMILY</a></li><li><a href="#">찾아오시는길</a></li></ul>
+  <h5>사업분야</h5><ul><li><a href="#">OFFSHORE</a></li><li><a href="#">SHIPBUILDING</a></li><li><a href="#">BUILDING</a></li></ul>
+  <h5>제품소개</h5><ul><li><a href="#">단체표준인증품(MAS)</a></li><li><a href="#">SWITCHBOARD</a></li><li><a href="#">MOTOR CONTROL CENTER</a></li><li><a href="#">VFD</a></li><li><a href="#">DISTRIBUTION BOARD</a></li><li><a href="#">JUNCTION BOX</a></li><li><a href="#">CONSOLE</a></li><li><a href="#">BOOTH</a></li><li><a href="#">NAVIGATION CONTROL</a></li><li><a href="#">OTHERS</a></li></ul>
+  <h5>R&amp;D</h5><ul><li><a href="#">보유기술&amp;인증서</a></li><li><a href="#">시험 및 검사장비</a></li></ul>
+  <h5>PARTNER</h5><ul><li><a href="#">PARTNER</a></li><li><a href="#">고객사</a></li><li><a href="#">DISTRIBUTION</a></li></ul>
+  <h5>고객지원</h5><ul><li><a href="#">서비스 범위</a></li><li><a href="#">Life-cycle 서비스</a></li><li><a href="#">연락처</a></li><li><a href="#">FAQ</a></li></ul>
+  <h5>ENG · KOR</h5>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="left">
+      <div class="kicker"><span>Marine · Offshore · Industrial Electrical</span><span>Busan, KR</span></div>
+      <div class="copy" id="copy">
+        <div class="t is-active"><div class="sub"><span>Electrical Safety</span></div><h1><span class="w"><span>고객의</span></span> <span class="w"><span><em>안전</em>에</span></span><br><span class="w"><span>진심을</span></span> <span class="w"><span>담는</span></span> <span class="w"><span>기업</span></span></h1><p>선박·해양플랜트·산업 현장의 저압 전기 시스템. 설계부터 인증, Life-cycle 서비스까지 에이치원이 책임집니다.</p></div>
+        <div class="t"><div class="sub"><span>Off-Shore Electrical System</span></div><h1><span class="w"><span>경쟁력을</span></span> <span class="w"><span>기본으로</span></span><br><span class="w"><span>세계를</span></span> <span class="w"><span><em>앞서나가는</em></span></span></h1><p>EPCI 선도 기업과 함께하는 Off-Shore LV Electrical System 전담 파트너.</p></div>
+        <div class="t"><div class="sub"><span>Shipbuilding Electrical System</span></div><h1><span class="w"><span>고객의</span></span> <span class="w"><span><em>상상을</em></span></span><br><span class="w"><span>현실로</span></span> <span class="w"><span>만들어</span></span> <span class="w"><span>드리는</span></span> <span class="w"><span>기업</span></span></h1><p>국내 대형 조선소 협력사, 최대 실적과 다양성의 조선 전기 시스템.</p></div>
+        <div class="t"><div class="sub"><span>Industry Electrical System</span></div><h1><span class="w"><span>The</span></span> <span class="w"><span>best</span></span> <span class="w"><span><em>solution</em></span></span><br><span class="w"><span>for</span></span> <span class="w"><span>your</span></span> <span class="w"><span>success</span></span></h1><p>단체표준인증품(MAS)으로 산업·건축 현장에 검증된 배전 솔루션을 공급합니다.</p></div>
+      </div>
+      <div class="bottom">
+        <a class="cta" href="#biz"><i>↓</i>사업분야 보기</a>
+        <div class="dots" id="dots"><button class="on" data-i="0" aria-label="1"></button><button data-i="1" aria-label="2"></button><button data-i="2" aria-label="3"></button><button data-i="3" aria-label="4"></button><button class="pp" id="pp" aria-label="일시정지">PAUSE</button></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="slide is-active"><div class="bg" style="background-image:url('../../assets/kr/main-visual/bg01.jpg')"></div><span class="cap">FIG.01 — OFFSHORE PLATFORM, NIGHT</span></div>
+      <div class="slide"><div class="bg" style="background-image:url('../../assets/kr/main-visual/bg02.jpg')"></div><span class="cap">FIG.02 — OFF-SHORE ELECTRICAL SYSTEM</span></div>
+      <div class="slide"><div class="bg" style="background-image:url('../../assets/kr/main-visual/bg03.jpg')"></div><span class="cap">FIG.03 — SHIPBUILDING</span></div>
+      <div class="slide"><div class="bg" style="background-image:url('../../assets/kr/main-visual/bg04_re.jpg')"></div><span class="cap">FIG.04 — INDUSTRY</span></div>
+      <div class="idx" id="idx">01</div>
+      <ul class="quick">
+        <li><a href="#">H-ONE TOUR <span>→</span></a><span class="pop" style="background-image:url('../../assets/common-ui/jke.gif')"></span></li>
+        <li><a href="#products">PRODUCT <span>→</span></a><span class="pop" style="background-image:url('../../assets/common-ui/product.gif')"></span></li>
+        <li><a href="#support">CONTACT <span>→</span></a><span class="pop" style="background-image:url('../../assets/common-ui/contac.gif')"></span></li>
+        <li><a href="#">FAMILY <span>→</span></a><span class="pop" style="background-image:url('../../assets/common-ui/family.gif')"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div class="track" id="ticker">
+  <span>ISO 9001 / 14001 / 45001</span><span>IECEx · ATEX Ex e, ia, tb IP66/67</span><span>SIEMENS LV SWITCHGEAR LICENSE PARTNER</span><span>단체표준인증 · 정부조달 MAS</span><span>UL 508A</span><span>현대일렉트릭 우수협력사 배전반 1위</span><span>DNV · KR TYPE APPROVAL</span>
+</div></div>
+
+<!-- GREETING -->
+<section class="greet" id="greet">
+  <div class="wrap">
+    <div class="shead reveal"><div class="no">Greeting<b>01</b></div><h2 class="h2 split">에이치원과 함께하면 <em>생각이 현실이</em> 됩니다.</h2></div>
+    <div class="body">
+      <div class="txt">
+        <blockquote class="reveal">전기인의 자부심으로 끊임없이 연구 개발하여 국내 제일의 기업을 이루었고, <span>현재는 세계 일류 기업으로</span> 성장하고 있습니다.</blockquote>
+        <p class="reveal">㈜JKE의 사업을 승계한 에이치원은 "변화와 다양성"으로 전 세계 고객이 인정하는 글로벌 일류 기업을 지향합니다. 기업경영·품질경영·안전보건경영·환경경영의 4대 경영방침 아래 세 가지 진심을 지킵니다.</p>
+        <ol class="reveal">
+          <li>감사하는 마음<small>고객, 파트너, 임직원 모두에게</small></li>
+          <li>고객감동<small>기대를 넘어서는 품질과 서비스</small></li>
+          <li>고객 안전에 진심<small>Electrical Safety First</small></li>
+        </ol>
+      </div>
+      <div>
+        <figure class="fig reveal"><img src="../../assets/kr/content/sub_ceo.jpg" alt="CEO 인사말"><figcaption><span>CEO MESSAGE</span><span>H-ONE HEADQUARTERS, BUSAN</span></figcaption></figure>
+        <ul class="values reveal">
+          <li><img src="../../assets/kr/content/test01.png" alt=""><div><strong>신뢰와 존중</strong><small>TRUST</small></div></li>
+          <li><img src="../../assets/kr/content/test02.png" alt=""><div><strong>창의와 혁신</strong><small>INNOVATION</small></div></li>
+          <li><img src="../../assets/kr/content/test03.png" alt=""><div><strong>정도경영</strong><small>INTEGRITY</small></div></li>
+          <li><img src="../../assets/kr/content/test04.png" alt=""><div><strong>전문성과 다양성</strong><small>EXPERTISE</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section class="biz" id="biz">
+  <div class="wrap">
+    <div class="shead reveal"><div class="no">Business Area<b>02</b></div><div><h2 class="h2 split">바다 위에서 육지까지, <em>세 가지 무대.</em></h2><p class="lead">해양플랜트, 조선, 산업·건축 — 각 분야에 최적화된 저압 전기 시스템을 설계하고 제작합니다.</p></div></div>
+    <div class="list">
+      <article class="row reveal">
+        <div class="n">01</div>
+        <div><h3>OFF-SHORE<small>해양플랜트 전기 시스템 · EPCI</small></h3><ul><li>검증된 설계능력과 기술력</li><li>비교할 수 없는 실적과 신뢰성</li><li>Global 기업과의 Partnership</li><li>I.S.E.S Global Network</li></ul></div>
+        <div class="fig"><img src="../../assets/kr/content/sub02_01_top.gif" alt="Off-Shore"><span class="tag">OFF-SHORE LV ELECTRICAL SYSTEM</span></div>
+      </article>
+      <article class="row reveal">
+        <div class="n">02</div>
+        <div><h3>SHIPBUILDING<small>조선 전기 시스템</small></h3><ul><li>최대 실적의 다양성</li><li>다각화된 설계능력·기술력·경쟁력</li><li>최적 Solution과 A/S</li></ul></div>
+        <div class="fig"><img src="../../assets/kr/content/sub02_02_top.gif" alt="Shipbuilding"><span class="tag">SHIPBUILDING ELECTRICAL SYSTEM</span></div>
+      </article>
+      <article class="row reveal">
+        <div class="n">03</div>
+        <div><h3>BUILDING<small>산업 · 건축 전기 시스템</small></h3><ul><li>단체표준인증품(MAS)</li><li>고압·저압 배전반 · 전동기제어반</li><li>분전반 · 태양광발전장치</li></ul></div>
+        <div class="fig"><img src="../../assets/kr/main-visual/bg04_re.jpg" alt="Building"><span class="tag">INDUSTRY ELECTRICAL SYSTEM</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="no">Product Line-up<b>03</b></div>
+      <div><h2 class="h2 split">열 개의 제품군, <em>하나의 기준.</em></h2><p class="lead">IECEx/ATEX 방폭, Siemens LV Switchgear License, 단체표준인증. 모든 제품은 부산 미음산단 공장에서 설계·제작·시험됩니다.</p></div>
+      <div class="filters"><span class="on">ALL</span><span>MARINE</span><span>OFFSHORE</span><span>MAS</span></div>
+    </div>
+    <div class="pgrid">
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_01/1025936734_2QimEaH3_d5b4c520f3129e07c667baa65b97d69d5cb09235.jpg" alt=""><span class="idx">02 / SWBD</span></div><div class="meta"><h4>SWITCHBOARD<small>고압·저압 배전반 · Normal / Special</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_02/661725314_dGWo1zDM_a0ba331251f57d5bfa5008afe3cfdeac4e33b1f1.jpg" alt=""><span class="idx">03 / MCC</span></div><div class="meta"><h4>MOTOR CONTROL CENTER<small>전동기제어반</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_10/1025936734_CkYsNAUh_eabc38057d7b12328512e255fe2577870325026d.jpg" alt=""><span class="idx">01 / MAS</span></div><div class="meta"><h4>단체표준인증품<small>정부조달 MAS</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_03/1025936734_50oOX2FE_aaeb9fdb04980abfea057d0526eea5e50ef951ba.jpg" alt=""><span class="idx">04 / VFD</span></div><div class="meta"><h4>VFD<small>가변주파수 드라이브 패널</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_04/1025936734_1pc9wMnZ_cdfd20c4acedd575bc9ff2a261c38706105fc465.JPG" alt=""><span class="idx">05 / DB</span></div><div class="meta"><h4>DISTRIBUTION BOARD<small>분전반</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_05/1025936734_hD2Liwr1_ddad27961526b431bb2abf7dbdbbebe81abd74f5.JPG" alt=""><span class="idx">06 / JB</span></div><div class="meta"><h4>JUNCTION BOX<small>IECEx/ATEX · IP66/67</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_06/1025936734_ZfIixOVd_26af817fc27ba97ef89f17b879057e333d3f93bb.JPG" alt=""><span class="idx">07 / CON</span></div><div class="meta"><h4>CONSOLE<small>Bridge · Engine Control Console</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_07/1025936734_CNcv0Ul2_b60b1ecc9a438bc4ad55917cacedaf30026dbace.jpg" alt=""><span class="idx">08 / BOOTH</span></div><div class="meta"><h4>BOOTH<small>Safe / Telephone Booth</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_08/1025936734_ZYKlMkgA_a790da74ddf41c96bd8a54608d985ad6e3a2b6e8.JPG" alt=""><span class="idx">09 / NAV</span></div><div class="meta"><h4>NAVIGATION CONTROL<small>항해등 제어반 · Type Approval</small></h4><i>→</i></div></a>
+      <a class="p reveal" href="#"><div class="im"><img src="../../assets/board-uploads/sub03_09/1025936734_KLpwk2vH_0a9b65a1b46dfbd862a342a0796ce1fd21bb8344.JPG" alt=""><span class="idx">10 / ETC</span></div><div class="meta"><h4>OTHERS<small>주문 제작 · 특수 사양</small></h4><i>→</i></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="history" id="history">
+  <div class="wrap">
+    <div class="shead reveal"><div class="no">History<b>04</b></div><div><h2 class="h2 split">2002년부터, <em>인증으로 쓴 연혁.</em></h2><p class="lead">창립 이후 매년 새로운 인증과 파트너십을 추가해 왔습니다. 그 기록이 곧 에이치원의 신뢰입니다.</p></div></div>
+    <div class="hscroll" id="hscroll">
+      <div class="hcol reveal"><div class="y">2020<small>단체표준 · MAS · ISO</small></div><ul><li><b>02</b>단체표준제품인증 (고압/저압배전반·전동기제어반·분전반·태양광발전장치)</li><li><b>04</b>정부조달 MAS 등록 (다수공급자계약)</li><li><b>06</b>ISO 9001 / 14001 / 45001 인증</li></ul></div>
+      <div class="hcol reveal"><div class="y">2019<small>Siemens · 현대일렉트릭</small></div><ul><li><b>07</b>Siemens와 LV Switchgear License Partner 계약</li><li><b>11</b>현대일렉트릭 품질평가 우수 협력사 선정 (배전반 부문 1위)</li></ul></div>
+      <div class="hcol reveal"><div class="y">2018<small>IECEx · ATEX</small></div><ul><li><b>03</b>IECEx/ATEX Ex e, ia, tb IP66/67 인증 (Bolting Type)</li><li><b>08</b>ISO 9001/14001 : 2015 전환 완료</li></ul></div>
+      <div class="hcol reveal"><div class="y">2017<small>Phoenix Mecano</small></div><ul><li><b>04</b>Phoenix Mecano (ROSE) 한국 방폭 공장 등록 완료</li><li><b>12</b>IECEx/ATEX Ex e, ia, tb IP66/67 인증 (Key Type)</li></ul></div>
+      <div class="hcol reveal"><div class="y">2016<small>INNO-BIZ · 신축 이전</small></div><ul><li><b>01</b>INNO-BIZ (기술혁신형 중소기업) 인정</li><li><b>06</b>ISO 14001, OHSAS 18001 인증</li><li><b>08</b>부산 미음공단 확장(신축) 이전</li></ul></div>
+      <div class="hcol reveal"><div class="y">2015<small>㈜JKE · 연구소</small></div><ul><li><b>01</b>DSME 협력업체 품질경영시스템 평가 "A등급"</li><li><b>06</b>MAIN-BIZ 인정 · 기업부설연구소 인정</li><li><b>09</b>㈜JKE 상호 변경</li><li><b>11</b>벤처기업 인정</li></ul></div>
+      <div class="hcol reveal"><div class="y">2010<small>– 2013 · Type Approval</small></div><ul><li><b>13</b>JBG ATEX 방폭 Certificate (DEKRA) · Navigation Lighting Control Type approval</li><li><b>11</b>JBC/D IP66/44 Type Approval (KR)</li><li><b>10</b>1천만불 수출의 탑 · JBB IP56 Type Approval</li></ul></div>
+      <div class="hcol reveal"><div class="y">2002<small>– 2009 · 창립</small></div><ul><li><b>09</b>5백만불 수출의 탑 수상</li><li><b>08</b>슈나이더 일렉트릭 Prisma 기술협약</li><li><b>06</b>삼성중공업 · 현대중공업 협력업체 등록</li><li><b>05</b>UL 508A 승인 · DSME 우수협력업체</li><li><b>02</b>회사 설립 · 대우조선해양 협력업체 등록</li></ul></div>
+    </div>
+    <div class="hmore reveal"><span>FULL TIMELINE — 2002 → 2026</span><a href="#">회사연혁 전체 보기 →</a></div>
+  </div>
+</section>
+
+<!-- R&D -->
+<section class="rnd" id="rnd">
+  <div class="wrap">
+    <div class="shead reveal"><div class="no">R&amp;D · Certification<b>05</b></div><div><h2 class="h2 split">국제 인증으로 증명하는 <em>기술의 깊이.</em></h2><p class="lead">6개 카테고리의 인증서와 자체 시험·검사장비. 종이 한 장이 아니라, 매일의 공정이 품질을 보증합니다.</p></div></div>
+    <div class="grid">
+      <div class="cert-wall">
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/237778480_TuRIrweg_04594354bc789e0e38188e49892ed288f9d3ebcc.png" alt=""><figcaption>MANAGEMENT SYSTEM</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/237778480_96e3DVxg_401ff4f3ccd887ede66cc8afd75137651e38b149.png" alt=""><figcaption>COMPANY CERTIFICATE</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/237778480_kWQDe943_ba425e342efe3f0fa7880dac4af89378df2ac9bd.png" alt=""><figcaption>LICENSE</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/237778480_e9lLf8px_df66c8a01b3f80a170abacd718ee8efe728a35ae.png" alt=""><figcaption>PRODUCT CERTIFICATE</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/1025936734_cgohkzHq_221d059412c07589dc4d476b51d3efb21f9732e8.jpg" alt=""><figcaption>STANDARD CERT.</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/1025936734_FMpo6tIH_d63f2ce7e1536ebd0505a5530220a13542ef3a09.jpg" alt=""><figcaption>RECOGNITION</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/1025936734_bvBr84k9_62bac770f17e34073d4ea98229f01dcbe02dc5c7.jpg" alt=""><figcaption>TYPE APPROVAL</figcaption></figure>
+        <figure class="reveal"><img src="../../assets/board-uploads/ceri1/237778480_TuRIrweg_04594354bc789e0e38188e49892ed288f9d3ebcc.png" alt=""><figcaption>ISO 45001</figcaption></figure>
+      </div>
+      <div>
+        <ul class="cat-list reveal">
+          <li><span>01</span>경영시스템<small>ISO 9001 · 14001 · 45001</small></li>
+          <li><span>02</span>기업인증서<small>INNO-BIZ · MAIN-BIZ · 벤처</small></li>
+          <li><span>03</span>라이센스<small>SIEMENS · PHOENIX MECANO</small></li>
+          <li><span>04</span>제품인증서<small>IECEx · ATEX · KR · UL 508A</small></li>
+          <li><span>05</span>단체표준 인증서<small>MAS</small></li>
+          <li><span>06</span>표창<small>수출의 탑 · 우수협력사</small></li>
+        </ul>
+        <div class="equip reveal">
+          <div class="im"><img src="../../assets/kr/content/sub04_02.gif" alt="시험 및 검사장비"></div>
+          <div><h4>시험 및 검사장비</h4><p>절연내력·내전압 시험기, IP 시험 설비, 열화상 카메라 등 자체 검사 장비로 출하 전 100% 검사를 수행합니다.</p><div class="num"><span data-count="100">0</span>%<small>PRE-DELIVERY INSPECTION</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="mono reveal">Partner · 고객사 · Distribution</div>
+    <h3 class="reveal">THE BEST <em>BUSINESS</em> PARTNER</h3>
+  </div>
+  <div class="marquee"><div class="track" id="mq">
+    <img src="../../assets/partner-logos/1_leoni_r.gif" alt=""><img src="../../assets/partner-logos/1_pry_r.gif" alt=""><img src="../../assets/partner-logos/l_01_1.gif" alt=""><img src="../../assets/partner-logos/l_01_2_r.gif" alt=""><img src="../../assets/partner-logos/l_012.gif" alt=""><img src="../../assets/partner-logos/l_014.gif" alt=""><img src="../../assets/partner-logos/l_015.gif" alt=""><img src="../../assets/partner-logos/l_017.gif" alt=""><img src="../../assets/partner-logos/l_018.gif" alt=""><img src="../../assets/partner-logos/l_021.gif" alt=""><img src="../../assets/partner-logos/l_023.gif" alt=""><img src="../../assets/partner-logos/l_024.gif" alt=""><img src="../../assets/partner-logos/l_025.gif" alt=""><img src="../../assets/partner-logos/l_026.gif" alt=""><img src="../../assets/partner-logos/l_027.gif" alt=""><img src="../../assets/partner-logos/l_028.gif" alt=""><img src="../../assets/partner-logos/l_038.gif" alt=""><img src="../../assets/partner-logos/l_039.gif" alt=""><img src="../../assets/partner-logos/l_015_1.gif" alt="">
+  </div></div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support" id="support">
+  <div class="wrap">
+    <div class="shead reveal"><div class="no">Customer Support<b>06</b></div><div><h2 class="h2 split">납품이 끝이 아닙니다. <em>Life-cycle</em> 전체를 함께합니다.</h2></div></div>
+    <div class="sgrid">
+      <article class="sc reveal"><div class="im"><img src="../../assets/kr/content/sub06_01.jpg" alt=""></div><div class="bd"><span class="mono">Service Scope</span><h4>서비스 범위</h4><p>설계 검토, 제작, FAT/시운전, 현장 커미셔닝까지 프로젝트 전 과정을 지원합니다.</p><a href="#">READ MORE →</a></div></article>
+      <article class="sc reveal"><div class="im"><img src="../../assets/kr/content/life_img.gif" alt=""></div><div class="bd"><span class="mono">Life-cycle</span><h4>Life-cycle 서비스</h4><p>예방 점검, 부품 공급, 개조·성능 개선까지 설비 수명 전체에 걸친 유지보수 프로그램.</p><a href="#">READ MORE →</a></div></article>
+      <article class="sc reveal"><div class="im"><img src="../../assets/kr/content/call_img.gif" alt=""></div><div class="bd"><span class="mono">Contact · FAQ</span><h4>연락처 · FAQ</h4><p>기술 문의, 견적 요청, A/S 접수는 대표전화 또는 FAQ 게시판을 이용해 주세요.</p><a href="#">READ MORE →</a></div></article>
+    </div>
+    <div class="contact">
+      <div class="reveal">
+        <span class="mono">Call us</span>
+        <div class="tel"><a href="tel:0519749500">051.974.9500</a></div>
+        <div class="addr">부산광역시 강서구 미음산단로 105번길 34 (구랑동) · F. 051.974.9595<small>34, MIEUMSANDAN-RO 105BEON-GIL, GANGSEO-GU, BUSAN, 46748 KOREA</small></div>
+      </div>
+      <div class="fam reveal">
+        <a href="#"><div class="im"><img src="../../assets/kr/content/family_factory.jpg" alt=""></div><span>㈜JKE 2공장<small>FAMILY</small></span></a>
+        <a href="#"><div class="im"><img src="../../assets/kr/tour-gallery/img_00__.jpg" alt=""></div><span>H-ONE Tour<small>FACTORY</small></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div><a class="logo" href="#"><b>H<i>-</i>ONE</b></a><p style="margin-top:16px;max-width:300px">선박·해양플랜트·산업용 배전반, MCC, 정션박스 전문 제조. ㈜JKE의 기술과 실적을 이어갑니다.</p></div>
+      <div><h5>COMPANY</h5><ul><li>인사말</li><li>비전&amp;방침</li><li>회사연혁</li><li>조직도</li><li>찾아오시는길</li></ul></div>
+      <div><h5>BUSINESS</h5><ul><li>OFFSHORE</li><li>SHIPBUILDING</li><li>BUILDING</li><li>R&amp;D</li></ul></div>
+      <div><h5>SUPPORT</h5><ul><li>서비스 범위</li><li>Life-cycle 서비스</li><li>연락처</li><li>FAQ</li></ul></div>
+    </div>
+    <div class="bot">
+      <span>부산광역시 강서구 미음산단로 105번길 34 (구랑동) · T. 051.974.9500 · F. 051.974.9595</span>
+      <span>© 2026 H-ONE All rights reserved.</span>
+    </div>
+    <div class="big">H-ONE ELECTRICAL</div>
+  </div>
+</footer>
+<button class="totop" id="totop">TOP</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap=typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined';
+  if(hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  var mnav=document.getElementById('mnav');
+  document.getElementById('burger').addEventListener('click',function(){mnav.classList.add('open')});
+  document.getElementById('mclose').addEventListener('click',function(){mnav.classList.remove('open')});
+
+  /* duplicate marquees */
+  ['mq','ticker'].forEach(function(id){var el=document.getElementById(id);el.innerHTML+=el.innerHTML});
+
+  /* ---- hero slider ---- */
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var texts=[].slice.call(document.querySelectorAll('.hero .t'));
+  var dots=[].slice.call(document.querySelectorAll('#dots button[data-i]'));
+  var idx=document.getElementById('idx');
+  var cur=0,timer=null,playing=true;
+  function restartDot(){dots.forEach(function(d,i){d.classList.remove('on');d.offsetWidth;if(i===cur)d.classList.add('on')})}
+  function textIn(t){
+    if(!hasGsap||reduce) return;
+    gsap.fromTo(t.querySelectorAll('.sub span'),{yPercent:100},{yPercent:0,duration:.8,ease:'power3.out'});
+    gsap.fromTo(t.querySelectorAll('h1 .w span'),{yPercent:110,rotate:3},{yPercent:0,rotate:0,duration:.9,stagger:.06,ease:'power3.out',delay:.1});
+    gsap.fromTo(t.querySelector('p'),{opacity:0,y:14},{opacity:1,y:0,duration:.8,delay:.5});
+  }
+  function go(n){
+    if(n===cur)return;
+    var pS=slides[cur],nS=slides[n],pT=texts[cur],nT=texts[n];cur=n;
+    idx.textContent='0'+(n+1);restartDot();
+    if(hasGsap&&!reduce){
+      gsap.to(pT,{y:-30,opacity:0,duration:.5,ease:'power2.in',onComplete:function(){pT.classList.remove('is-active');gsap.set(pT,{clearProps:'all'})}});
+      nS.classList.add('is-active');
+      gsap.fromTo(nS,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.1,ease:'power3.inOut',onComplete:function(){pS.classList.remove('is-active')}});
+      setTimeout(function(){nT.classList.add('is-active');textIn(nT)},400);
+    }else{pS.classList.remove('is-active');nS.classList.add('is-active');pT.classList.remove('is-active');nT.classList.add('is-active')}
+  }
+  function start(){stop();timer=setInterval(function(){go((cur+1)%4)},7000)}
+  function stop(){if(timer)clearInterval(timer)}
+  dots.forEach(function(d){d.addEventListener('click',function(){go(+d.dataset.i);if(playing)start()})});
+  var pp=document.getElementById('pp');
+  pp.addEventListener('click',function(){playing=!playing;pp.textContent=playing?'PAUSE':'PLAY';playing?start():stop()});
+  textIn(texts[0]);restartDot();
+  if(!reduce)start();
+
+  var totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){totop.classList.toggle('show',window.scrollY>600)},{passive:true});
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
+
+  /* split words in .split headings */
+  document.querySelectorAll('.h2.split').forEach(function(h){
+    var out='';
+    h.childNodes.forEach(function(node){
+      if(node.nodeType===3){node.textContent.split(/(\s+)/).forEach(function(w){if(!w.trim()){out+=' ';return}out+='<span class="w"><span>'+w+'</span></span>'})}
+      else{out+='<span class="w"><span>'+node.outerHTML+'</span></span>'}
+    });
+    h.innerHTML=out;
+  });
+
+  if(!hasGsap||reduce){
+    document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity=1;el.style.transform='none'});
+    document.querySelectorAll('.biz .row .fig').forEach(function(el){el.style.clipPath='none'});
+    document.querySelectorAll('.hcol').forEach(function(el){el.classList.add('lit')});
+    document.querySelectorAll('[data-count]').forEach(function(el){el.textContent=el.dataset.count});
+    return;
+  }
+
+  gsap.utils.toArray('.reveal').forEach(function(el,i){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',delay:(i%3)*.08,scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+  gsap.utils.toArray('.h2.split').forEach(function(h){
+    gsap.from(h.querySelectorAll('.w span'),{yPercent:110,rotate:2,duration:.9,stagger:.05,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 85%'}});
+  });
+  gsap.utils.toArray('.biz .row .fig').forEach(function(f){
+    gsap.to(f,{clipPath:'inset(0 0 0 0%)',duration:1.3,ease:'power3.inOut',scrollTrigger:{trigger:f,start:'top 80%'}});
+    gsap.fromTo(f.querySelector('img'),{scale:1.25},{scale:1,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:f,start:'top 80%'}});
+  });
+  gsap.utils.toArray('.hcol').forEach(function(c,i){
+    ScrollTrigger.create({trigger:c,start:'top 80%',once:true,onEnter:function(){setTimeout(function(){c.classList.add('lit')},i*120)}});
+  });
+  gsap.utils.toArray('[data-count]').forEach(function(el){
+    var target=+el.dataset.count;
+    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:function(){
+      var o={v:0};gsap.to(o,{v:target,duration:1.6,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v)}});
+    }});
+  });
+  /* product images parallax-ish */
+  gsap.utils.toArray('.p .im img').forEach(function(img){
+    gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  /* hero photo parallax */
+  gsap.to('.hero .right .slide',{yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  /* footer big text */
+  gsap.fromTo('.footer .big',{xPercent:-10},{xPercent:5,ease:'none',scrollTrigger:{trigger:'.footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+})();
+</script>
+
+<script src="../_switcher.js"></script>
+</body>
+</html>
